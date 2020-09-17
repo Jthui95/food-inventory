@@ -1,0 +1,27 @@
+{
+  "name": "food-inventory",
+  "version": "1.0.0",
+  "description": "Food storage app that manages the inventory of a user’s fridge/freezer/pantry manually",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maxx105/food-inventory.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maxx105/food-inventory/issues"
+  },
+  "homepage": "https://github.com/Maxx105/food-inventory#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "^6.2.0"
+  }
+}
