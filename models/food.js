@@ -33,6 +33,6 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 140]
       }
     }
-})
+});
     return Food;
   };
