@@ -17,7 +17,7 @@ module.exports = function(app) {
           });
       });
     
-      // Get route for retrieving a single post
+      // Get route for retrieving a single item
       app.get("/api/items/:id", function(req, res) {
         db.Food.findOne({
           where: {
@@ -29,21 +29,23 @@ module.exports = function(app) {
           });
       });
     
-      // POST route for saving a new post
+      // POST route for saving a new item
       app.post("/api/items", function(req, res) {
-        console.log(req.body);
+        // console.log(req.body);
         db.Food.create({
           name: req.body.name,  
-          expiration: req.body.experation,
+          expiration: req.body.expiration,
           quantity: req.body.quantity,
-          location: req.body.location
+          location: req.body.location,
+          description: req.body.description
         })
           .then(function(dbFood) {
             res.json(dbFood);
+            //console.log(dbFood);
           });
       });
     
-      // DELETE route for deleting posts
+      // DELETE route for deleting items
       app.delete("/api/items/:id", function(req, res) {
         db.Food.destroy({
           where: {
@@ -55,7 +57,7 @@ module.exports = function(app) {
           });
       });
     
-      // PUT route for updating posts
+      // PUT route for updating items
       app.put("/api/items", function(req, res) {
         db.Food.update(req.body,
           {
