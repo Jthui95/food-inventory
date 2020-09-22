@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PANTRY</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="/assets/js/view-pantry.js"></script>
-   <style>
-       *{
-           text-align: center;
-       }
-       .col{
-           border: 1px solid black;
-       }
-   </style>
+    <style>
+        * {
+            text-align: center;
+        }
+
+        .col {
+            border: 1px solid black;
+        }
+    </style>
 </head>
+
 <body>
     <a href="/"><button id="returnBtn">back to home</button></a>
     <h1>PANTRY</h1>
@@ -27,14 +31,15 @@
         <div class="col">delete btn</div>
     </div>
     {{#each items}}
-        <div class="row">
-            <div class="col" contenteditable="true">{{name}}</div>
-            <div class="col" contenteditable="true">{{quantity}}</div>
-            <div class="col" contenteditable="true">{{expiration}}</div>
-            <div class="col" contenteditable="true">{{description}}</div>
-            <div class="col"><button class='update' id={{id}}>Update</button></div>
-            <div class="col"><button class='delete' id={{id}}>Delete</button></div>
-        </div>
+    <div class="row">
+        <div class="col" contenteditable="true" id="name-input">{{name}}</div>
+        <div class="col" contenteditable="true" id="quantity-input">{{quantity}}</div>
+        <div class="col" contenteditable="true" id="expiration-input">{{expiration}}</div>
+        <div class="col" contenteditable="true" id="description-input">{{description}}</div>
+        <div class="col"><button class='update' id={{id}}>Save Changes</button></div>
+        <div class="col"><button class='delete' id={{id}}>Delete</button></div>
+    </div>
     {{/each}}
 </body>
+
 </html>
