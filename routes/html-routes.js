@@ -1,5 +1,4 @@
-// var path = require("path");
-// var db = require("../models");
+var db = require("../models");
 
 module.exports = function(app) {
     app.get("/", function(req, res) {
@@ -11,26 +10,47 @@ module.exports = function(app) {
     });
 
     app.get("/view-fridge", function(req, res) {
-        // var hbsObject = {
-        //     cats: data
-        //   };
-        // console.log(hbsObject);
-        res.render("view-fridge", hbsObject);
+        db.Food.findAll({
+            where: {
+                location: 'Refrigerator'
+            }
+        }).then(function(dbFridge) {
+            var fridgeFoodArray = [];
+            dbFridge.forEach(food => fridgeFoodArray.push(food.dataValues));
+            var hbsObjectFridge = {
+                items: fridgeFoodArray
+            };
+            res.render("view-fridge", hbsObjectFridge);
+        });
     });
 
     app.get("/view-freezer", function(req, res) {
-        // var hbsObject = {
-        //     cats: data
-        //   };
-        // console.log(hbsObject);
-        res.render("view-freezer", hbsObject);
+        db.Food.findAll({
+            where: {
+                location: 'Freezer'
+            }
+        }).then(function(dbFreezer) {
+            var freezerFoodArray = [];
+            dbFreezer.forEach(food => freezerFoodArray.push(food.dataValues));
+            var hbsObjectFreezer = {
+                items: freezerFoodArray
+            };
+            res.render("view-freezer", hbsObjectFreezer);
+        });
     });
 
     app.get("/view-pantry", function(req, res) {
-        // var hbsObject = {
-        //     cats: data
-        //   };
-        // console.log(hbsObject);
-        res.render("view-pantry", hbsObject);
+        db.Food.findAll({
+            where: {
+                location: 'Pantry'
+            }
+        }).then(function(dbPantry) {
+            var pantryFoodArray = [];
+            dbPantry.forEach(food => pantryFoodArray.push(food.dataValues));
+            var hbsObjectPantry = {
+                items: pantryFoodArray
+            };
+            res.render("view-pantry", hbsObjectPantry);
+        });
     });
 };
