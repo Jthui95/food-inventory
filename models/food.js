@@ -7,6 +7,10 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 140]
       }
     },
+    photo: {
+      type: DataTypes.BLOB('long'),
+      allowNull: true,
+    },
     expiration: {
       type: DataTypes.DATEONLY,
       allowNull: false,
