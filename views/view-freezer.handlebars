@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freezer</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>FREEZER</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="/assets/js/view-freezer.js"></script>
-   <style>
-       *{
-           text-align: center;
-       }
-       .col{
-           border: 1px solid black;
-       }
-   </style>
+    <script src="/assets/js/expiration.js"></script>
+    <style>
+        * {
+            text-align: center;
+        }
+
+        .col {
+            border: 1px solid black;
+        }
+    </style>
 </head>
+
 <body>
     <a href="/"><button id="returnBtn">back to home</button></a>
     <h1>FREEZER</h1>
@@ -27,14 +32,15 @@
         <div class="col">delete btn</div>
     </div>
     {{#each items}}
-        <div class="row">
-            <div class="col" contenteditable="true" id="name-input">{{name}}</div>
-            <div class="col" contenteditable="true" id="quantity-input">{{quantity}}</div>
-            <div class="col" contenteditable="true" id="expiration-input">{{expiration}}</div>
-            <div class="col" contenteditable="true" id="description-input">{{description}}</div>
-            <div class="col"><button class='update' id={{id}}>Save Changes</button></div>
-            <div class="col"><button class='delete' id={{id}}>Delete</button></div>
-        </div>
+    <div class="row" id="itemInfo{{id}}">
+        <div class="col" id="name{{id}}" contenteditable="true"><span>{{name}}</span></div>
+        <div class="col" id="quantity{{id}}" contenteditable="true"><span>{{quantity}}</span></div>
+        <div class="col" id="expiration{{id}}" contenteditable="true"><span>{{expiration}}</span></div>
+        <div class="col" id="description{{id}}" contenteditable="true"><span>{{description}}</span></div>
+        <div class="col"><button class='update' id={{id}}>Save Changes</button></div>
+        <div class="col"><button class='delete' id={{id}}>Delete</button></div>
+    </div>
     {{/each}}
-    </body>
+</body>
+
 </html>
