@@ -8,19 +8,33 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="/assets/js/expiration.js"></script>
     <style>
-        * {
-            text-align: center;
+        #storageName {
+            font-style: italic;
+            font-size: 60px;
+            margin-left: 30%;
+            margin-right: 30%;
+            color: blue;
+            background-color: yellow;
+            border: blue 6px solid;
         }
-        .col {
-            border: 1px solid black;
+        body {
+            background-image: url("https://www.wtvq.com/wp-content/uploads/2019/02/1280x960_61123B00-RIZHF.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     </style>
 </head>
 <body>
-    <a href="/"><button id="returnBtn">back to home</button></a>
-    <a href="/create-item"><button>enter item</button></a>
-    <h1 id='storageName'>PANTRY</h1>
-            {{#each items}}
+    <div id="header">
+        <br>
+        <div id="nav">
+            <a href="/"><button class="btn btn-info" id="returnBtn">back to home</button></a>
+            <a href="/create-item"><button class="btn btn-success">enter item</button></a>
+        </div>
+        <br>
+        <h1 id='storageName'>PANTRY</h1>
+    </div>
+    {{#each items}}
     <br>
     <div class="card" id="itemInfo{{id}}">
         <img src="..." class="card-img-top" alt="image of {{name}}">
@@ -28,13 +42,14 @@
             <h5 contenteditable="true" id="name{{id}}"><span>{{name}}</span></h5>
             <p contenteditable="true" id="description{{id}}"><span>{{description}}</span></p>
         </div>
-        <ul class="list-group list-group-flush">
+        <ul class="list-group list-group-flush" style="list-style-type: none;">
             <li contenteditable="true">Amount: <span id="quantity{{id}}">{{quantity}}</span></li>
             <li contenteditable="true">Expires on: <span id="expiration{{id}}">{{expiration}}</span></li>
         </ul>
         <div class="card-body">
-            <div><button class='update' id={{id}}>Save Changes</button></div>
-            <div><button class='delete' id={{id}}>Delete</button></div>
+            <div><button type="button" class='update btn btn-primary' id={{id}}>Save Changes</button></div>
+            <br>
+            <div><button type="button" class='delete btn btn-danger' id={{id}}>Delete</button></div>
         </div>
     </div>
     <br>
