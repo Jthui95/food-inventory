@@ -1,20 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        * {
+            padding: 5px;
+        }
+
+        body {
+            background-image: url("https://www.mexigo.com/wp-content/uploads/2017/02/mexigo-food-background.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            background-color: beige;
+            margin-top: 45px;
+            width: 75%;
+            border: black solid 13px;
+            border-radius: 10px;
+        }
+
+        h1{
+            font-style: italic;
+            color: rgb(185, 3, 3);
+            font:bold; 
+            font-size:80px;
+        }
+        .btn{
+            border: black 2px solid;
+        }
+    </style>
 </head>
+
 <body>
-   <header>
-       <h1> Food Inventory</h1>
-       <p>Description</p>
-   </header>
-   <div>
-       <a href="/create-item"><button>enter item</button></a>
-       <a href="/view-fridge"><button>fridge</button></a>
-       <a href="/view-freezer"><button>freezer</button></a>
-       <a href="/view-pantry"><button>pantry</button></a>
-   </div>
+    <div class="container">
+        <header>
+            <br>
+            <h1> Food Inventory</h1>
+            <p>The year is 2020. We no longer have to waste time looking through our food storages to know what we have.
+            </p>
+            <p>Stay up to date with your inventory today!</p>
+        </header>
+        <div>
+            <a href="/create-item"><button class="btn btn-success">Enter Item</button></a>
+        </div>
+
+        <div>
+            <h3>Select a food storage to view</h3>
+            <a href="/view-fridge"><button id="fdBtn" class="btn btn-info">Fridge</button></a>
+            <a href="/view-freezer"><button id="fzBtn" class="btn btn-secondary">Freezer</button></a>
+            <a href="/view-pantry"><button id="panBtn" class="btn btn-warning">Pantry</button></a>
+            <br><br><br><br>
+        </div>
+    </div>
 </body>
+
 </html>
