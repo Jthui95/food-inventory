@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,46 +14,71 @@
             font-size: 60px;
             margin-left: 30%;
             margin-right: 30%;
-            color: blue;
+            color: black;
             background-color: yellow;
-            border: blue 6px solid;
+            border: black 5px solid;
         }
+
         body {
-            background-image: url("https://www.wtvq.com/wp-content/uploads/2019/02/1280x960_61123B00-RIZHF.jpg");
+            background-image: url("/assets/images/pantryBG.jpg");
             background-repeat: no-repeat;
             background-size: cover;
         }
     </style>
 </head>
+
 <body>
-    <div id="header">
-        <br>
-        <div id="nav">
-            <a href="/"><button class="btn btn-info" id="returnBtn">back to home</button></a>
-            <a href="/create-item"><button class="btn btn-success">enter item</button></a>
-        </div>
-        <br>
-        <h1 id='storageName'>PANTRY</h1>
+    <div class="container-fluid">
+        <a href="/">
+            <button id="returnBtn" class='btn btn-success shadow' style='border: black solid 3px;'>
+                <i class="fas fa-home fa-4x"></i>
+            </button>
+        </a>
+        <a href="/view-freezer">
+            <button class='btn btn-success shadow' style='border: black solid 3px;'>
+                <i class="fa-2x">Freezer</i>
+            </button>
+        </a>
+        <a href="/view-fridge">
+            <button class='btn btn-success shadow' style='border: black solid 3px;'>
+                <i class="fa-2x">Fridge</i>
+            </button>
+        </a>
+        <a href="/create-item">
+            <button class='btn btn-success shadow' style='border: black solid 3px; float: right;'>
+                <i class="fas fa-plus fa-4x"></i>
+            </button>
+        </a>
+        <h1 id='storageName' style="text-align: center;">PANTRY</h1>
     </div>
-    {{#each items}}
-    <br>
-    <div class="card" id="itemInfo{{id}}">
-        <img src="..." class="card-img-top" alt="image of {{name}}">
-        <div class="card-body">
-            <h5 contenteditable="true" id="name{{id}}"><span>{{name}}</span></h5>
-            <p contenteditable="true" id="description{{id}}"><span>{{description}}</span></p>
-        </div>
-        <ul class="list-group list-group-flush" style="list-style-type: none;">
-            <li contenteditable="true">Amount: <span id="quantity{{id}}">{{quantity}}</span></li>
-            <li contenteditable="true">Expires on: <span id="expiration{{id}}">{{expiration}}</span></li>
-        </ul>
-        <div class="card-body">
-            <div><button type="button" class='update btn btn-primary' id={{id}}>Save Changes</button></div>
-            <br>
-            <div><button type="button" class='delete btn btn-danger' id={{id}}>Delete</button></div>
-        </div>
+    <div class="container">
+        {{#each items}}
+            <div class="card" style="margin-top:10px; background-color: beige; border:black solid 4px;" id="itemInfo{{id}}">
+                <h5 contenteditable="true" id="name{{id}}" class="card-header"><span>{{name}}</span></h5>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="https://i0.wp.com/cowancenter.org/wp-content/uploads/2020/06/placeholder.png?ssl=1" alt="placeholder" class="img-thumbnail">
+                        </div>
+                        <div class="col-md-6" style="text-align: center; margin-top: 30px;">
+                            <h1>Amount: <span id="quantity{{id}}" class="card-title" contenteditable="true">{{quantity}}</span></h1>
+                            <h1>Expires on: <span id="expiration{{id}}" class="card-title" contenteditable="true">{{expiration}}</span></h1>
+                            <h1>Description: <span id="description{{id}}" class="card-title" contenteditable="true">{{description}}</span></h1>
+                        </div>
+                        <div class="col-md-3" style='margin-top: 20px; text-align: cemter;'>                     
+                            <button class='update btn btn-primary shadow' id={{id}} style='width: 180px; border: black solid 3px;'>
+                                <i class="far fa-save fa-5x"></i>
+                            </button>
+                            <br>
+                            <button class='delete btn btn-danger shadow' id={{id}} style='width: 180px; margin-top:20px; border: black solid 3px;'>
+                                <i class="far fa-trash-alt fa-5x"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
     </div>
-    <br>
-    {{/each}}
 </body>
+
 </html>

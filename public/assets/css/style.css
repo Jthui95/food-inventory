@@ -1,9 +1,11 @@
-* {
+/* * {
     text-align: center;
 }
+
 .col {
     border: 1px solid black;
 }
+
 .card{
     background-color: beige;
     border: grey solid 3px;
@@ -11,8 +13,9 @@
     margin-right: 30%;
     width: 40%;
 }
+
 h5 {
     font-weight: bold;
     text-decoration: underline;
     font-style: italic;
-}
+} */

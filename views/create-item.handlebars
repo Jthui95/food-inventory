@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,46 +14,100 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+
         #item-form {
             margin-left: 35%;
-            border: black 2px solid;
+            border: black 4px solid;
             background-color: beige;
             width: fit-content;
             height: 40%;
             margin-bottom: 40px;
+            border-radius: 10px;
+
         }
+
         img {
             border: 2px solid brown;
         }
+
         h1 {
+            font-style: italic;
             color: maroon;
             background-color: beige;
             width: fit-content;
-            margin-left: 42%;
-            border: black solid 2px;
-            padding: 6px;
+            margin-left: 33%;
+            border: black solid 4px;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 60px;
         }
+
         .btn {
             margin: 6px;
         }
-        ;
+
+        h3 {
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+
+        input {
+            margin: 8px;
+            border: black solid 2px;
+            background-color: whitesmoke;
+        }
+
+        textarea {
+            margin: 8px;
+            background-color: whitesmoke;
+            border: black solid 2px;
+        }
+
+        #storageDropdown {
+            margin: 8px;
+            background-color: whitesmoke;
+            border: black solid 2px;
+        }
+
+        #submit {
+            border: black solid 3px;
+            margin: 10px;
+            margin-left: 40%;
+        }
     </style>
 </head>
+
 <body>
-    <div>
-        <a href="/"><button class="btn btn-dark" id="returnBtn">back to home</button></a>
-        <a href="/view-fridge"><button id="fdBtn" class="btn btn-info">fridge</button></a>
-        <a href="/view-freezer"><button id="fzBtn" class="btn btn-secondary">freezer</button></a>
-        <a href="/view-pantry"><button id="panBtn" class="btn btn-warning">pantry</button></a>
+    <div class="container-fluid">
+        <a href="/">
+            <button id="returnBtn" class='btn btn-success shadow' style='border: black solid 3px;'>
+                <i class="fas fa-home fa-4x"></i>
+            </button>
+        </a>
+        <a href="/view-pantry">
+            <button class='btn btn-success shadow' style='border: black solid 3px;'>
+                <i class="fa-2x">Pantry</i>
+            </button>
+        </a>
+        <a href="/view-fridge">
+            <button class='btn btn-success shadow' style='border: black solid 3px;'>
+                <i class="fa-2x">Fridge</i>
+            </button>
+        </a>
+        <a href="/view-freezer">
+            <button class='btn btn-success shadow' style='border: black solid 3px;'>
+                <i class="fa-2x">Freezer</i>
+            </button>
+        </a>
     </div>
-    <h1 id="header"> create an item </h1>
+    <h1 id="header"> CREATE AN ITEM </h1>
     <form id="item-form">
         <div>
-            <h3>item name:</h3>
+            <h3>Item Name:</h3>
             <input type="text" placeholder="i.e. milk" id="name-input">
         </div>
         <div class="foto">
-            <h3>image:</h3>
+            <h3>Image:</h3>
             <img src="https://picsum.photos/300/300" id="img-preview" />
             <label class="file-upload-container" for="file-upload">
                 <input id="file-upload" type="file" style="display:none;">
@@ -60,40 +115,32 @@
             </label>
         </div>
         <div>
-            <h3>quantity:</h3>
+            <h3>Quantity:</h3>
             <input type="text" placeholder="# of items" id="quantity-input">
         </div>
         <div>
-            <h3>expiration:</h3>
-            <input type="text" placeholder="**/**/****" id="expiration-input">
+            <h3>Expiration:</h3>
+            <input type="text" placeholder="mm/dd/yyyy" id="expiration-input">
         </div>
         <div>
-            <h3>description:</h3>
-            <textarea placeholder="are there any special instructions?" id="description-input"></textarea>
+            <h3>Description:</h3>
+            <textarea placeholder="any additional details?" id="description-input"></textarea>
         </div>
-        dropdown 
+
         <div>
-            <label for="storage">Choose a storage:</label>
+            {{!-- <label for="storage">Choose a storage:</label> --}}
+            <h3>Choose a storage:</h3>
             <select name="storage" id="storageDropdown">
                 <option value="refrigerator">refrigerator</option>
                 <option value="freezer">freezer</option>
                 <option value="pantry">pantry</option>
             </select>
         </div>
-        {{!-- <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                select a storage
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <option value="refrigerator">refrigerator</option>
-                <option value="freezer">freezer</option>
-                <option value="pantry">pantry</option>
-            </div>
-        </div> --}}
+
         <div>
             <a href="/"><button id='submit' class="btn btn-success">Submit</button></a>
         </div>
     </form>
 </body>
+
 </html>

@@ -1,5 +1,5 @@
-var CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dkoae4dcu/image/upload";
-var CLOUDNIARY_UPLOAD_PRESET = 'kybowzsz';
+// var CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dkoae4dcu/image/upload";
+// var CLOUDNIARY_UPLOAD_PRESET = 'kybowzsz';
 
 var imgPreview = document.getElementById('img-preview');
 var fileUpload = document.getElementById('file-upload');
