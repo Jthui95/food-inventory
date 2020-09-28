@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "@bloodHound7",
+    "password": "password",
     "database": "foodinventory",
     "host": "127.0.0.1",
     "dialect": "mysql"

@@ -7,10 +7,10 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 140]
       }
     },
-    // photo: {
-    //   type: DataTypes.STRING,
-    //   allowNull: true,
-    // },
+    photo: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     expiration: {
       type: DataTypes.DATEONLY,
       allowNull: false,
