@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://product-gallery.cloudinary.com/all.js" type="text/javascript">
+    </script>
+
+
+    <title>Tutorial</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> 
+      <style>
+        * {
+            padding: 5px;
+        } 
+
+
+         h1 {
+            font-style: italic;
+            color: black;
+            font: bold;
+            font-size: 80px;
+           text-align: center;
+        }
+
+     </style>  
+</head>
+
+<body>
+
+    <h1> Tutorial </h1>
+    <div id="my-gallery" style="max-width:80%;margin:auto">
+    </div>
+
+
+
+</body>
+
+<script type="text/javascript">
+    const myGallery = cloudinary.galleryWidget({
+        container: "#my-gallery",
+        cloudName: "asdfqwer",
+        displayProps: {
+            mode: "classic",
+            topOffset:70
+        },
+        aspectRation:"4:3",
+        mediaAssets: [
+    
+        { publicId: "tutorial-2", mediaType: "video" },
+        { publicId: "index", mediaType: "image"},
+        { publicId: "create-item", mediaType: "image"},
+        { publicId: "pantry", mediaType: "image" },
+        { publicId: "fridge", mediaType: "image"},
+        { publicId: "freezer", mediaType: "image"},
+        ],
+          carouselStyle: "thumbnails",
+          thumbnailProps: {width: 250, height: 250, spacing: 4,},   
+  carouselLocation: "bottom",     
+  viewportBreakpoints: [
+  { breakpoint: 600, carouselStyle: "thumbnails", carouselLocation: "bottom" },
+  { breakpoint: 300, carouselStyle: "indicators", carouselLocation: "bottom", navigation: "always" } ]
+
+    });
+
+    myGallery.render();
+</script>
+
+</html>

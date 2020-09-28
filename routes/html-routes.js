@@ -53,4 +53,7 @@ module.exports = function(app) {
             res.render("view-pantry", hbsObjectPantry);
         });
     });
+    app.get("/tutorial", function(req, res) {
+        res.render("tutorial");
+    });
 };
