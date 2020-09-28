@@ -57,9 +57,9 @@
                 <div id="itemInfo{{id}}"><h5 contenteditable="true" id="name{{id}}" class="card-header"><span>{{name}}</span></h5></div>
                 <div class="card-body">
                     <div class="row">
-                        {{!-- <div class="col-md-3">
-                            <img src={{photo}} alt="placeholder" class="img-thumbnail">
-                        </div> --}}
+                        <div class="col-md-3">
+                            <img src={{photo}} alt={{name}} class="img-thumbnail" id='photo-input'>
+                        </div>
                         <div class="col-md-6" style="text-align: center; margin-top: 30px;">
                             <h1>Amount: <span id="quantity{{id}}" class="card-title" contenteditable="true">{{quantity}}</span></h1>
                             <h1>Expires on: <span id="expiration{{id}}" class="card-title" contenteditable="true">{{expiration}}</span></h1>

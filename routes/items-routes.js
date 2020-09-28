@@ -31,17 +31,16 @@ module.exports = function(app) {
     
       // POST route for saving a new item
       app.post("/api/items", function(req, res) {
-        // console.log(req.body);
         db.Food.create({
           name: req.body.name,  
           expiration: req.body.expiration,
           quantity: req.body.quantity,
           location: req.body.location,
-          description: req.body.description
+          description: req.body.description,
+          photo: req.body.photo
         })
           .then(function(dbFood) {
             res.json(dbFood);
-            //console.log(dbFood);
           });
       });
     
