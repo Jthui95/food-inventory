@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     // photo: {
-    //   type: DataTypes.BLOB('long'),
+    //   type: DataTypes.STRING,
     //   allowNull: true,
     // },
     expiration: {
